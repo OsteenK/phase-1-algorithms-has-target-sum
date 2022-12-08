@@ -1,20 +1,24 @@
 function hasTargetSum(array, target) {
-  // Write your algorithm here
+  const seenNumbers = {};
+
+  for (const number of array) {
+    // n steps
+    const complement = target - number;
+    if (complement in seenNumbers) return true;
+    seenNumbers[number] = true;
+  }
+
+  return false;
+}
+function findVote(array) {
+  for (const item of array) {
+    if (item === "vote") return "vote";
+  }
 }
 
-/* 
-  Write the Big O time complexity of your function here
-*/
-
-/* 
-  Add your pseudocode here
-*/
-
-/*
-  Add written explanation of your solution here
-*/
-
-// You can run `node index.js` to view these console logs
+function findVote(object) {
+  if (object.vote) return "vote";
+}
 if (require.main === module) {
   // add your own custom tests in here
   console.log("Expecting: true");
